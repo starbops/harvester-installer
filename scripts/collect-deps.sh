@@ -58,7 +58,7 @@ update_rancher_deps()
   local fleet_versions="${WORKING_DIR}/fleet-versions.txt"
   local webhook_versions="${WORKING_DIR}/webhook-versions.txt"
   local rancher_image_envs="${WORKING_DIR}/rancher-envs.txt"
-  local rancher_image="rancher/rancher:$rancher_version"
+  local rancher_image="rancher/rancher:v2.7-head"
 
   # Get min verseion from rancher image's env variables
   docker image inspect $rancher_image | jq '.[0].Config.Env' | yq e '.[]' - > "$rancher_image_envs"
